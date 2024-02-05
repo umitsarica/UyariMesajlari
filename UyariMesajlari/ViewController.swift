@@ -32,80 +32,36 @@ class ViewController: UIViewController {
         self.present(AlertMessage, animated: true, completion: nil )
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     
     
     @IBAction func signUpTiklandi(_ sender: Any) {
         
         if emailTextFiels.text == "" {
-                        //email girilmemiş
+            //email girilmemiş
             FailMsg(Title: "Fail Message", Msg: "Does Not Enter Email ", BtnText: "Ok")
-
-         //   let uyariMesaji = UIAlertController(title: "Hata Mesajı", message: "Email Girilmedi", preferredStyle: UIAlertController.Style.alert)
-            
-         //   let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // OK Butonuna tıklanınca olacaklar closure'ı
-         //       print("Ok button tıklandı")
-         //   }
-            
-         //   uyariMesaji.addAction(okButton)
-            
-         //   self.present(uyariMesaji, animated: true, completion: nil )
-            
             
         } else if passwordTextField.text == "" {
             //parola girilmemiş
-            
-            let uyariMesaji = UIAlertController(title: "Hata Mesajı", message: "PassWord  Girilmedi", preferredStyle: UIAlertController.Style.alert)
-            
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // OK Butonuna tıklanınca olacaklar closure'ı
-                print("Ok button tıklandı")
-            }
-            
-            uyariMesaji.addAction(okButton)
-            
-            self.present(uyariMesaji, animated: true, completion: nil )
+            FailMsg(Title: "Fail Message", Msg: "Does Not Enter Password ", BtnText: "Ok")
             
         } else if passwordAgainTextField.text != passwordTextField.text {
             //parolalar uyuşmuyor
-            
-            let uyariMesaji = UIAlertController(title: "Hata Mesajı", message: "PassWord Uyuşmuyor", preferredStyle: UIAlertController.Style.alert)
-            
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // OK Butonuna tıklanınca olacaklar closure'ı
-                print("Ok button tıklandı")
-            }
-            
-            uyariMesaji.addAction(okButton)
-            
-            self.present(uyariMesaji, animated: true, completion: nil )
-            
+            FailMsg(Title: "Fail Message", Msg: "Does Not Mismatch Password ", BtnText: "Ok")
             
         } else {
             //Kayıt başarılı
+            FailMsg(Title: "Fail Message", Msg: "Does Not Enter Email ", BtnText: "Ok")
             
-            let uyariMesaji = UIAlertController(title: "Başarılı", message: "Kullanıcı Oluşturuldu", preferredStyle: UIAlertController.Style.alert)
-            
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // OK Butonuna tıklanınca olacaklar closure'ı
-                print("Ok button tıklandı")
-            }
-            
-            uyariMesaji.addAction(okButton)
-            
-            self.present(uyariMesaji, animated: true, completion: nil )        }
+        }
         
+                
         
     }
     
-    
-    
-    
 }
-
